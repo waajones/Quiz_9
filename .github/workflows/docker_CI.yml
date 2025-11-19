@@ -1,0 +1,18 @@
+name: Docker Text Analyzer CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pull Docker image from Docker Hub
+        run: docker pull waajones/text-analyzer:latest
+
+      - name: Run tests inside Docker container
+        run: docker run --rm waajones/text-analyzer:latest
