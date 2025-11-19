@@ -45,14 +45,14 @@ def find_most_common_word(text: str):
 
     freq = {}
 
-    # Count frequencies manually
+    # Count manually
     for w in words:
         if w not in freq:
             freq[w] = 1
         else:
             freq[w] += 1
 
-    # Determine the highest frequency
+    # Determine the highest
     max_count = 0
     for count in freq.values():
         if count > max_count:
